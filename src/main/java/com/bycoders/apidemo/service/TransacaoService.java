@@ -6,6 +6,8 @@ import com.bycoders.apidemo.util.exception.AppException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class TransacaoService {
   @Autowired
@@ -17,6 +19,10 @@ public class TransacaoService {
 
   public Transacao save( Transacao transacao ){
     return transacaoRepository.save(transacao);
+  }
+
+  public List<Object> trasacoesPorLoja(){
+    return transacaoRepository.trasacoesPorLoja();
   }
 
 }
