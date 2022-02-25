@@ -1,6 +1,8 @@
 package com.bycoders.apidemo.model;
 
 import com.bycoders.apidemo.util.model.GenericEntity;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 
 import javax.persistence.*;
 import java.util.List;
@@ -16,6 +18,7 @@ public class Representante extends GenericEntity {
   @Column
   private String CPF;
 
+  @JsonIgnore
   @OneToMany(mappedBy = "representante", fetch = FetchType.EAGER)
   private List<Loja> lojas;
 

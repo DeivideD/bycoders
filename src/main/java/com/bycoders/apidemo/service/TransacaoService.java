@@ -1,5 +1,6 @@
 package com.bycoders.apidemo.service;
 
+import com.bycoders.apidemo.model.MovimentacaoLoja;
 import com.bycoders.apidemo.model.Transacao;
 import com.bycoders.apidemo.repository.TransacaoRepository;
 import com.bycoders.apidemo.util.exception.AppException;
@@ -21,7 +22,7 @@ public class TransacaoService {
     return transacaoRepository.save(transacao);
   }
 
-  public List<Object> trasacoesPorLoja(){
+  public List<Object[]> trasacoesPorLoja(){
     return transacaoRepository.trasacoesPorLoja();
   }
 

@@ -1,6 +1,9 @@
 package com.bycoders.apidemo.model;
 
 import com.bycoders.apidemo.util.model.GenericEntity;
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 
 import javax.persistence.*;
 import java.util.List;
@@ -29,6 +32,7 @@ public class Loja extends GenericEntity {
   @Column
   private String estado;
 
+  @JsonIgnore
   @OneToMany(mappedBy = "loja", fetch = FetchType.EAGER)
   private List<Movimentacao> movimentacoes;
 

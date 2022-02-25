@@ -1,5 +1,7 @@
 package com.bycoders.apidemo.controller;
 
+import com.bycoders.apidemo.data.TransacoesData;
+import com.bycoders.apidemo.model.MovimentacaoLoja;
 import com.bycoders.apidemo.service.TransacaoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -18,9 +20,13 @@ public class TransacoesController {
   @Autowired
   private TransacaoService transacaoService;
 
+
+  @Autowired
+  private TransacoesData transacoesData;
+
   @GetMapping
-  public ResponseEntity<List<Object>> carregarTrasacoes(){
-    List<Object> trasacoes = transacaoService.trasacoesPorLoja();
-    return new ResponseEntity<List<Object>>(trasacoes, HttpStatus.OK);
+  public ResponseEntity<List<MovimentacaoLoja>> carregarTrasacoes(){
+    List<MovimentacaoLoja> trasacoes = transacoesData.buscarTrasacoes();
+    return new ResponseEntity<List<MovimentacaoLoja>>(trasacoes, HttpStatus.OK);
   }
 }

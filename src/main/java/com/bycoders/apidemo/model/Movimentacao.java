@@ -1,6 +1,7 @@
 package com.bycoders.apidemo.model;
 
 import com.bycoders.apidemo.util.model.GenericEntity;
+import com.fasterxml.jackson.annotation.JsonBackReference;
 
 import javax.persistence.*;
 import java.util.Date;

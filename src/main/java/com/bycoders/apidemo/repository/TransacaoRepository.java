@@ -1,5 +1,6 @@
 package com.bycoders.apidemo.repository;
 
+import com.bycoders.apidemo.model.MovimentacaoLoja;
 import com.bycoders.apidemo.model.Transacao;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
@@ -17,5 +18,5 @@ public interface TransacaoRepository extends JpaRepository<Transacao, Long> {
           "l.nome,\n" +
           "t.natureza\n" +
           "order by t.descricao", nativeQuery = true )
-  List<Object> trasacoesPorLoja();
+  List<Object[]> trasacoesPorLoja();
 }
