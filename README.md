@@ -1,37 +1,39 @@
 # bycoders
 
-o projeto foi realizado buscando demonstrar habilidades e intimidade com as principais ferramentas de desenvolvimento web,
-não se trata de um sistema completo, temos apenas uma pagina onde tento reproduzir um sistema de importacao de arquivos.  
+O projeto tem por finalidade, demonstrar habilidades e intimidade com as principais ferramentas de desenvolvimento web,
+não se tratando de um sistema completo e sim de uma página que reproduz um sistema de importação de arquivos.  
 
-### 🔧  Informaçoes de Instalação
- Deve-se clonar o projeto do repositorio do [git](https://github.com)
-Apos a finalização pode subir i projeto de duas formas
-executando o arquivo app.sh na pasta raiz da aplicação
-
-ou executar manualmente o back-end e front-end
-
-#### back-end
-primeiramente executar o api.jar na pasta principal da aplicacao atravez de um terminal
+### 🔧  Informações de Instalação
+ Deve-se clonar o projeto do repositório do [git](https://github.com). 
 ```
-java -jar api.jar
+ git@github.com:DeivideD/bycoders.git
 ```
-#### front-end
-executar o seguintes comandos na pasta /aplicacao/front/bycoder atravez de um terminal
+Ápos a finalização, existem duas formas de subir o projeto.    
+1. Executar o arquivo app.sh na pasta raiz da aplicação.  
+2. Executar manualmente o back-end e front-end.
+
+#### 2.1 back-end
+Executar o api.jar na pasta principal da aplicação através de um terminal
+```
+java -jar api-demo-0.0.1-SNAPSHOT.jar
+```
+#### 2.2 front-end
+Executar o comando abaixo na pasta /aplicacao/front/bycoder através de um terminal
 ```
 yarn install && yarn start
 ```
-#### observaçoes
-Para ambos os metodos é necessario o seguinte setap
-java 8+,
-postgresSQL com um banco com o nome demo_bycoder
+#### Observações
+Para ambos os métodos é necessário o setap
+java 11,
+postgresSQL com um banco de nome demo_bycoder
 ```sql
 CREATE DATABASE demo_bycoder;
 ```
-o sistema criará tabelas e dara uma carga de dados apos o upload do primeiro arquivo
+O sistema criará tabelas e dará uma carga de dados após o upload do primeiro arquivo.
 
 
 
-### 📌 Informaçoes de Acesso
+### 📌 Informações de Acesso
 [Link front-end](http://localhost:3000/)
 ```
 http://localhost:3000/
@@ -47,9 +49,8 @@ http://localhost:8080/
 http://localhost:8080/swagger-ui.html
 ```
 ## 📦 Desenvolvimento
-### Documentacao de Referencia
+### Documentação de Referência
 
-For further reference, please consider the following sections:
 
 * [Official Apache Maven documentation](https://maven.apache.org/guides/index.html)
 * [Spring Boot Maven Plugin Reference Guide](https://docs.spring.io/spring-boot/docs/2.6.3/maven-plugin/reference/html/)
@@ -63,11 +64,17 @@ For further reference, please consider the following sections:
 * [Axios](https://axios-http.com/ptbr/docs/intro)
 
 ## 🛠️ Construído com
+###Ferramentas
+* [IntelliJ IDEA](https://www.jetbrains.com/pt-br/idea/)
+* [Visual Studio Code](https://code.visualstudio.com/)
 
-* [springboot](https://spring.io/projects/spring-boot)
+###Tecnologias
+* [Springboot](https://spring.io/projects/spring-boot)
 * [ReactJS](https://pt-br.reactjs.org/)
 
 
 ## 🎁 Importante
-* [link com video para demonstração]()
-* Obrigado a bycoders pela oportunidade 📢
+* [Link com vídeo para demonstração]()
+
+ 
+Obrigado bycoders pela oportunidade 📢
