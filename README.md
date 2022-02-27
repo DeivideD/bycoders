@@ -22,8 +22,8 @@ yarn install && yarn start
 ```
 #### observaçoes
 Para ambos os metodos é necessario o seguinte setap
-necessario java 8+ instalado.
-necessario postgresSQL instalado com um banco com o nome demo_bycoder
+java 8+,
+postgresSQL com um banco com o nome demo_bycoder
 ```sql
 CREATE DATABASE demo_bycoder;
 ```
