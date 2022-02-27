@@ -5,6 +5,8 @@ import com.bycoders.apidemo.repository.RepresentanteRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class RepresentanteService {
   @Autowired
@@ -20,5 +22,8 @@ public class RepresentanteService {
 
   public Representante save(Representante representante){
     return representanteRepository.save(representante);
+  }
+  public List<Representante> findAll(){
+    return representanteRepository.findAll();
   }
 }

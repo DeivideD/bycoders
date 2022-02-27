@@ -55,14 +55,13 @@ public class ImportadorMovimentacao {
       //percorre todo o arquivo
       while (leitor.hasNext()) {
         linhasDoArquivo = leitor.nextLine();
-
-        movimentacao.setTransacao(parseTransaction(Integer.parseInt(linhasDoArquivo.substring(0,1))));
-        movimentacao.setData(parserData(linhasDoArquivo.substring(1,9), "yyyy-MM-dd"));
-        movimentacao.setValor(parseValor(linhasDoArquivo.substring(9,19)));
-        movimentacao.setCPF(linhasDoArquivo.substring(19,30));
-        movimentacao.setCartao(linhasDoArquivo.substring(30,42));
-        movimentacao.setHora(parseHora(linhasDoArquivo.substring(42,48)));
-        movimentacao.setLoja(parseLoja(linhasDoArquivo.substring(62,80),linhasDoArquivo.substring(48,62)));
+         movimentacao.setTransacao(parseTransaction(Integer.parseInt(linhasDoArquivo.substring(0,1))));
+         movimentacao.setData(parserData(linhasDoArquivo.substring(1,9), "yyyy-MM-dd"));
+         movimentacao.setValor(parseValor(linhasDoArquivo.substring(9,19)));
+         movimentacao.setCPF(linhasDoArquivo.substring(19,30));
+         movimentacao.setCartao(linhasDoArquivo.substring(30,42));
+         movimentacao.setHora(parseHora(linhasDoArquivo.substring(42,48)));
+         movimentacao.setLoja(parseLoja(linhasDoArquivo.substring(62,linhasDoArquivo.length()),linhasDoArquivo.substring(48,62)));
         movimentacoes.add(movimentacao);
         movimentacao = new Movimentacao();
       }
@@ -72,7 +71,7 @@ public class ImportadorMovimentacao {
     return movimentacoes;
   }
 
-  private Date parserData(String dateParser, String format) {
+  public Date parserData(String dateParser, String format) {
     Date date = new Date();
     System.out.println(format);
     if (dateParser == null || dateParser.equals("")) {
@@ -87,17 +86,19 @@ public class ImportadorMovimentacao {
     return date;
   }
 
-  private Double parseValor(String valor) {
-    Double valorParseado = Double.parseDouble(valor) * 100.00;
+  public Double parseValor(String valor) {
+    Double valorParseado = Double.parseDouble(valor) / 100.00;
     return valorParseado;
   }
 
-  private String parseHora(String hora) {
-
+  public String parseHora(String hora) {
+    if (hora == null || hora.equals("")) {
+      return "";
+    }
     return hora.substring(0,2) + ":" +  hora.substring(2,4) + ":" + hora.substring(4,6);
   }
 
-  private Transacao parseTransaction(int tipo) {
+  public Transacao parseTransaction(int tipo) {
     Transacao transacao = transacaoService.findByTipo(tipo);
     if(transacao == null){
       return gerardorDados.gerarTransacoes( Integer.toString(tipo));
@@ -105,12 +106,12 @@ public class ImportadorMovimentacao {
     return transacao;
   }
 
-  private String parseCPF(String cpf) {
+  public String parseCPF(String cpf) {
     Representante representante = new Representante();
     return representante.getCPF();
   }
 
-  private Loja parseLoja(String nomeLoja, String nomeRepresentante) {
+  public Loja parseLoja(String nomeLoja, String nomeRepresentante) {
     Loja loja = lojaService.findByNome(nomeLoja);
       if (loja == null) {
         return gerardorDados.gerarLojas(nomeLoja, nomeRepresentante);

@@ -28,6 +28,7 @@ public class ArquivoController {
   @PostMapping("/carregar")
   public ResponseEntity<?>  uploadArquivo(@RequestParam MultipartFile arquivo){
     List<Movimentacao> movimentcoes = importadorMovimentacao.carregarArquivoCNAB(arquivo);
+
     for( Movimentacao movimentacao : movimentcoes ){
      movimentacaoService.save(movimentacao);
     }
