@@ -60,6 +60,7 @@ export function ModalRepresentante(props: Props){
       isOpen={props.isOpen}
       onRequestClose={props.handleClose}
       style={customStyles}
+      ariaHideApp={false}
       contentLabel="Example Modal"
     >
       <button style={{float:"right"}} onClick={props.handleClose}>X</button>

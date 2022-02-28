@@ -1,4 +1,4 @@
-# bycoders
+# Bycoders_
 
 O projeto tem por finalidade, demonstrar habilidades e intimidade com as principais ferramentas de desenvolvimento web,
 não se tratando de um sistema completo e sim de uma página que reproduz um sistema de importação de arquivos.  
@@ -8,9 +8,8 @@ não se tratando de um sistema completo e sim de uma página que reproduz um sis
 ```
  git@github.com:DeivideD/bycoders.git
 ```
-Ápos a finalização, existem duas formas de subir o projeto.    
-1. Executar o arquivo app.sh na pasta raiz da aplicação.  
-2. Executar manualmente o back-end e front-end.
+Ápos a finalização
+####Executar back-end e front-end.
 
 #### 2.1 back-end
 Executar o api.jar na pasta principal da aplicação através de um terminal

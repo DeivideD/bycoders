@@ -39,6 +39,7 @@ export function ModalUpload(props: Props){
     <div>
     <Modal
       isOpen={props.isOpen}
+      ariaHideApp={false}
       onRequestClose={props.handleClose}
       style={customStyles}
       contentLabel="Example Modal"
