@@ -33,12 +33,6 @@ public class SegurancaConfig extends WebSecurityConfigurerAdapter {
     http.authorizeRequests()
             .antMatchers("/javax.faces.resource/**").permitAll()
             .antMatchers("/*").permitAll()
-            .anyRequest().authenticated()
-            .and().headers().frameOptions().sameOrigin()
-            .and()
-            .logout()
-            .deleteCookies("JSESSIONID")
-            .invalidateHttpSession(true)
             .and().csrf().disable();
   }
   

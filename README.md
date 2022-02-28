@@ -8,7 +8,7 @@ não se tratando de um sistema completo e sim de uma página que reproduz um sis
 ```
  git@github.com:DeivideD/bycoders.git
 ```
-Ápos a finalização
+Ápos a finalização, entre na pasta clonada
 
 ```bash
 cd bycoders 
@@ -19,23 +19,52 @@ cd bycoders
 
 #### 2.1 back-end
 Executar o api.jar na pasta principal da aplicação através de um terminal
-```
+```bash
 java -jar api-demo-0.0.1-SNAPSHOT.jar
 ```
-#### 2.2 front-end
-Executar o comando abaixo na pasta /aplicacao/front/bycoder através de um terminal
+#### Observação
+a aplicação roda na porta 8080, certifique-se de que ela está liberada
+ou receberá uma saida de erro
+```bash
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Web server failed to start. Port 8080 was already in use.
 ```
+
+#### 2.2 front-end
+na pasta /front/bycoder
+```bash
+cd front/bycoder
+```
+
+Executar o comando abaixo através de um terminal
+```bash
 yarn install && yarn start
 ```
+
 #### Observações
-Para ambos os métodos é necessário o setap
+a aplicação front-end roda na porta 3000, certifique-se de que 
+ela está liberada.
+
+
+#### setap: 
 java 11,
+Node.js,
+Yarn,
 postgresSQL com um banco de nome demo_bycoder
 ```sql
 CREATE DATABASE demo_bycoder;
 ```
 O sistema criará tabelas e dará uma carga de dados após o upload do primeiro arquivo.
 
+arquivo:
+```bash
+bycoders/src/main/resources/CNAB.txt
+```
 
 
 ### 📌 Informações de Acesso
@@ -61,7 +90,6 @@ http://localhost:8080/swagger-ui.html
 * [Spring Boot Maven Plugin Reference Guide](https://docs.spring.io/spring-boot/docs/2.6.3/maven-plugin/reference/html/)
 * [Create an OCI image](https://docs.spring.io/spring-boot/docs/2.6.3/maven-plugin/reference/html/#build-image)
 * [Spring Data JPA](https://docs.spring.io/spring-boot/docs/2.6.3/reference/htmlsingle/#boot-features-jpa-and-spring-data)
-* [OAuth2 Client](https://docs.spring.io/spring-boot/docs/2.6.3/reference/htmlsingle/#boot-features-security-oauth2-client)
 * [Spring Security](https://docs.spring.io/spring-boot/docs/2.6.3/reference/htmlsingle/#boot-features-security)
 * [Spring Web](https://docs.spring.io/spring-boot/docs/2.6.3/reference/htmlsingle/#boot-features-developing-web-applications)
 * [Swagger](https://swagger.io/tools/open-source/open-source-integrations/)

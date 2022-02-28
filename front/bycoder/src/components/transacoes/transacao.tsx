@@ -1,5 +1,7 @@
 import { useEffect, useState } from "react"
 import { api } from "../../services/api"
+import { ModalRepresentante } from "../modal/modalRepresentante";
+import { ModalUpload } from "../modal/modalUpload";
 
 interface Trasacao {
   transacao: string;
@@ -22,9 +24,11 @@ interface ResumoMovimentacao {
 
 export function Movimentacao() {
 
+  let subtitle: HTMLHeadingElement;
   const [transacoes, setTransacao] = useState<Trasacao[]>([]);
-
   const [mensagem, setMensagem] = useState("");
+  const [modalUploadIsOpen, setUploadIsOpen] = useState(false);
+  const [modalRepresentanteIsOpen, setRepresentanteIsOpen] = useState(false);
 
   useEffect(() => {
     api.get('/transacoes')
@@ -57,15 +61,38 @@ export function Movimentacao() {
     return resumoPorLoja;
   }
 
+
+  function hadleOpenUploadModal() {
+    setUploadIsOpen(true);
+  }
+
+  function hadleCloseUploadModal() {
+    setUploadIsOpen(false);
+  }
+
+  function hadleOpenRepresentanteModal() {
+    setRepresentanteIsOpen(true);
+  }
+
+  function hadleCloseRepresentanteModal() {
+    setRepresentanteIsOpen(false);
+  }
+
   function atualizar () {
-    api.get('/transacoes')
-    .then(response => setTransacao(response.data))
     setMensagem("Dados Atualizados");
-    setTimeout(() => { setMensagem(""); }, 3000);
+    setTimeout(() => { 
+      api.get('/transacoes')
+      .then(response => setTransacao(response.data))
+    }, 300);
+
+    setTimeout(() => { 
+      setMensagem("")
+    }, 5000);
   }
 
   return (
     <>
+    <div>
       <div className="div-table">
         <div className={mensagem === "" ? "none" : "alert"} > {mensagem}</div>
         <table>
@@ -91,8 +118,13 @@ export function Movimentacao() {
             ))}
           </tbody>
         </table>
-        <button type="button" className="btnAtualizar" onClick={atualizar}>Atualizar</button>
+        <button type="button" className="" onClick={hadleOpenUploadModal}>Importar CNAB</button>
+         <button type="button" className="" onClick={hadleOpenRepresentanteModal}>Representantes</button>
       </div>
-    </>
+
+      <ModalUpload isOpen={modalUploadIsOpen} handleClose={hadleCloseUploadModal} atualizarTrasacoes={atualizar}/>
+      <ModalRepresentante isOpen={modalRepresentanteIsOpen} handleClose={hadleCloseRepresentanteModal}/>
+    </div>
+  </>
   );
 }

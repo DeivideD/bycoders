@@ -56,14 +56,12 @@
   max-width: 1120px;
 }
 .header-content, .footer-content {
-  max-width: 1024px;
+  max-width: 1080px;
   margin: 0 auto;
-  display: flex;
-  justify-content:  space-between;
-
+  height: 5rem;
 }
 
-.header-content button {
+.div-table button {
   font-size: 1rem;
   color: #fff;
   background-color: #5e7699;
@@ -73,7 +71,20 @@
   height: 3rem;
   display: inline-block;
   cursor: pointer;
-  margin-top: 3rem;
+  margin-right: 10px;
+}
+.btn-logout{
+  font-size: 1rem;
+  color: #fff;
+  background-color: #5e7699;
+  border: 0;
+  padding: 0 2rem;
+  border-radius: 0.25rem;
+  height: 3rem;
+  cursor: pointer;
+  float: right;
+  margin-top:20px;
+
 }
 
 .alert {

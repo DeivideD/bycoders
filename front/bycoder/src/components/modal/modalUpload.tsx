@@ -18,13 +18,14 @@ const customStyles = {
 interface Props {
   isOpen: boolean;
   handleClose: () => void;
+  atualizarTrasacoes: () => void;
 }
 
 
 export function ModalUpload(props: Props){
   const [arquivo, setArquivo] = useState();
 
-  function handleCreateMovimnetos(e: FormEvent){
+function handleCreateMovimnetos(e: FormEvent){
      e.preventDefault()
      console.log(arquivo)
 
@@ -33,6 +34,7 @@ export function ModalUpload(props: Props){
 
      api.post("/arquivos/carregar", formData );
      props.handleClose()
+      props.atualizarTrasacoes()
   }
 
   return(
