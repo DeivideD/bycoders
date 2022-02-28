@@ -9,6 +9,12 @@ não se tratando de um sistema completo e sim de uma página que reproduz um sis
  git@github.com:DeivideD/bycoders.git
 ```
 Ápos a finalização
+
+```bash
+cd bycoders 
+```
+
+
 ####Executar back-end e front-end.
 
 #### 2.1 back-end
