@@ -80,11 +80,8 @@ export function Movimentacao() {
 
   function atualizar () {
     setMensagem("Dados Atualizados");
-    setTimeout(() => { 
-      api.get('/transacoes')
+    api.get('/transacoes')
       .then(response => setTransacao(response.data))
-    }, 300);
-
     setTimeout(() => { 
       setMensagem("")
     }, 5000);

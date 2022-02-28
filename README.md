@@ -6,7 +6,7 @@ não se tratando de um sistema completo e sim de uma página que reproduz um sis
 ### 🔧  Informações de Instalação
  Deve-se clonar o projeto do repositório do [git](https://github.com). 
 ```
- git@github.com:DeivideD/bycoders.git
+ git clone git@github.com:DeivideD/bycoders.git
 ```
 Ápos a finalização, entre na pasta clonada
 

@@ -25,16 +25,16 @@ interface Props {
 export function ModalUpload(props: Props){
   const [arquivo, setArquivo] = useState();
 
-function handleCreateMovimnetos(e: FormEvent){
+async function handleCreateMovimnetos(e: FormEvent){
      e.preventDefault()
      console.log(arquivo)
 
      const formData = new FormData();
      formData.append("arquivo", arquivo!);
 
-     api.post("/arquivos/carregar", formData );
+    await api.post("/arquivos/carregar", formData );
      props.handleClose()
-      props.atualizarTrasacoes()
+     props.atualizarTrasacoes()
   }
 
   return(
